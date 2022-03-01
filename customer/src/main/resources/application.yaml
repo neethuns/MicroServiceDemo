@@ -1,0 +1,35 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+    hostname: localhost
+spring:
+  application:
+    name: customer
+  data:
+    mongodb:
+      database: customer_db
+      port: 27017
+  cloud:
+    discovery:
+      enabled: true
+server:
+  port: 8085
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+feign:
+  circuitbreaker:
+    enabled: true
+
+
+logging:
+  file:
+    name: /home/hnncentos/Desktop/Logfile/Log/customerlog.log
+
+
+
